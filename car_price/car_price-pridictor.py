@@ -3,11 +3,16 @@ import numpy as np
 import pickle as pk
 import streamlit as st
 import os
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 model_path = os.path.join(BASE_DIR, "model.pkl")
-model=pk.load(open('model.pkl','rb'))
-st.header(' 🚗 car price pridiction ml model')
-dataset = pd.read_csv('Cardetails.csv')
+data_path = os.path.join(BASE_DIR, "Cardetails.csv")
+
+model = pk.load(open(model_path, "rb"))
+dataset = pd.read_csv(data_path)
+
+st.header('🚗 Car Price Prediction ML Model')
 
 def get_brand_name(car_name):
   car_name = car_name.split(' ')[0]
