@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import pickle as pk
 import streamlit as st
-model=pk.load(open('/home/basant/airwriting/car_price/model.pkl','rb'))
+model=pk.load(open('model.pkl','rb'))
 st.header(' 🚗 car price pridiction ml model')
 dataset = pd.read_csv('Cardetails.csv')
 
